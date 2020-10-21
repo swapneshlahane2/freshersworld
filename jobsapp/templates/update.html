@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>update</title>
+  </head>
+  <body>
+    <form class="" action="/update/{{o.id}}/" method="POST">{% csrf_token %}
+      Company Name: <input type="text" name="company_name" value="{{o.company_name}}"><br><br>
+      City: <input type="text" name="city" value="{{o.city}}"><br><br>
+      Vaccancy: <input type="text" name="vaccancy" value="{{o.vaccancy}}"><br><br>
+      Experience:<input type="text" name="experience" value="{{o.experience}}"><br><br>
+      Skills: <input type="text" name="skills" value="{{o.skills}}"><br><br>
+    <button type="submit" name="button">UPDATE</button><br><br>
+    </form>
+
+    <form>
+      <input type="button" value="Back" onclick="history.back()">
+    </form> <br><br><br><br><br>
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ADD</title>
+  </head>
+  <body>
+    <form class="" action="/add/" method="POST">{% csrf_token %}
+      Company Name: <input type="text" name="company_name" value=""><br><br>   <!-- name madhe apan key lihito -->
+      City: <input type="text" name="city" value=""><br><br>
+      Vaccancy: <input type="text" name="vaccancy" value=""><br><br>
+      Experince:<input type="text" name="experience" value=""><br><br>
+      Skills: <input type="text" name="skills" value=""><br><br>
+      <button type="submit" name="button">SAVE</button><br><br>
+    </form>
+
+  <form>
+    <input type="button" value="Back" onclick="history.back()">
+  </form> <br><br><br><br><br>
+
+  </body>
+</html>

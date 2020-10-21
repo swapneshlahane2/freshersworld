@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{%static 'css/loginpage.css' %}">
+  </head>
+  <body>
+    <form class="" action="/login/" method="POST">{% csrf_token %}
+      {{form.as_p}}
+      <button type="submit" name="button">LOGIN</button>
+    </form> <br><br><br><br><br>
+
+  </body>
+</html>

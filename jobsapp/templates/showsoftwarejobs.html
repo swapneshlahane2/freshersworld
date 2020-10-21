@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Show Software Jobs</title>
+    <link rel="stylesheet" href="{%static 'css/software.css'%}">
+  </head>
+  <body>
+
+  {% for x in data %}
+      <li>COMPANY NAME &nbsp : {{x.company_name}}</li><br>
+      <li>CITY &nbsp : {{x.city}}</li><br>
+      <li>VACCANCY &nbsp : {{x.vaccancy}}</li><br>
+      <li>EXPERIENCE &nbsp : {{x.experience}}</li><br>
+      <li>SKILLS &nbsp : {{x.skills}}</li><br>
+
+      <form class="" action="/update/{{x.id}}/" method="get">
+        <button type="submit" name="button">UPDATE</button><br><br>
+      </form>
+
+      <form class="" action="/delete/{{x.id}}/" method="get">
+        <button type="submit" name="button">DELETE</button><br><br>
+      </form>
+
+    <hr><br><br>
+  {% endfor %}
+
+      <form class="" action="/showsoftwarejobs/" method="POST">{% csrf_token %}
+        <button type="submit" name="button"><a href="/add/">ADD COMPANY NAME</a> </button>
+      </form><br><br>
+
+      <form class="" action="/logout/" method="POST">{% csrf_token %}
+        <button type="submit" name="button">LOGOUT</button>
+        </form>
+
+  </body>
+</html>

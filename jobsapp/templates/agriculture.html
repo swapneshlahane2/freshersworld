@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About Agriculture</title>
+    <link rel="stylesheet" href="{%static 'css/agriculture.css' %}">
+  </head>
+  <body>
+    <marquee style="background-color:yellow;"><h1 style="color:red;">Welcome to FRESHERSWORLD.COM Jobs. For any query please get in touch with our Customer Support No:- 8888877777</h1></marquee><br><br>
+    <h1>Pharma Jobs Information</h1>
+    <h3>
+      {% if data %}
+
+      <table border=5>
+        <thead>
+          <th>COMPANY NAME</th>
+          <th>CITY</th>
+          <th>VACCANCY</th>
+          <th>EXPEREINCE</th>
+          <th>SKILLS</th>
+        </thead>
+        {% for x in data %}
+        <tr>
+          <td>{{x.company_name}}</td>
+          <td>{{x.city}}</td>
+          <td>{{x.vaccancy}}</td>
+          <td>{{x.experience}}</td>
+          <td>{{x.skills}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+        <p>NO RECORDS FOUND</p>
+    {% endif %}<br><br><br><br><br><br><br><br>
+    </h3>
+
+    <form>
+      <input type="button" value="Back" onclick="history.back()">
+    </form>  <br><br><br><br><br>
+
+  <form class="" action="/logout/" method="POST">{% csrf_token %}
+    <button type="submit" name="button">LOGOUT</button>
+  </form>
+
+  </body>
+</html>
